@@ -31,13 +31,32 @@ namespace CodeBase.Infrastructure.GameStates
 
         private void OnInitialSceneLoaded()
         {
-            _gameStateMachine.Enter<LoadLevelState>();
+            _gameStateMachine.Enter<LoadProgressState>();
         }
 
         private void RegisterServices()
         {
             IInputService inputService = RegisterInputService();
             _services.RegisterSingle<IInputService>(inputService);
+            _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
+            _services.RegisterSingle<IStaticDataService>(RegisterStaticData());
+            _services.RegisterSingle<IAssetProvider>(new AssetProvider());
+            _services.RegisterSingle<IGameFactory>
+            (
+                new GameFactory
+                (
+                    _services.Single<IStaticDataService>(),
+                    _services.Single<IPersistentProgressService>(),
+                    _services.Single<IAssetProvider>()
+                )
+            );
+        }
+
+        private IStaticDataService RegisterStaticData()
+        {
+            IStaticDataService staticDataService = new StaticDataService();
+            staticDataService.LoadTowers();
+            return staticDataService;
         }
 
         private static IInputService RegisterInputService()

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5eaa71c4fb44a91bc662fa66f6d7998, type: 3}
+  m_Name: Tower_1
+  m_EditorClassIdentifier: 
+  _levelId: 1
+  prefab: {fileID: 1410882233334960895, guid: 771048a6e57359d4fbb4d263e71dafec, type: 3}
+  _levelCount: 100
+  _levelHeight: 1
+  _additionalBeamHeight: 1
+  _minRotationY: 0
+  _maxRotationY: 360

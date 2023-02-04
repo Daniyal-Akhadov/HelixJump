@@ -14,7 +14,17 @@ namespace CodeBase.Infrastructure.GameStates
             _states = new Dictionary<Type, IExitState>()
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader),
+                [typeof(LoadProgressState)] = new LoadProgressState
+                (
+                    this,
+                    services.Single<IPersistentProgressService>()
+                ),
+                [typeof(LoadLevelState)] = new LoadLevelState
+                (
+                    this,
+                    services.Single<IGameFactory>(),
+                    sceneLoader
+                ),
                 [typeof(GameLoopState)] = new GameLoopState()
             };
         }

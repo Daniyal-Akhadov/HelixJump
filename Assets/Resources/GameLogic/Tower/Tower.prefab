@@ -68,8 +68,8 @@ MonoBehaviour:
   _additionalBeamHeight: 1
   _beam: {fileID: 3739716722315764031, guid: 7cec7cb257d2ae74ba7bdcb20201d051, type: 3}
   _spawnBeamMarker: {fileID: 1083943293613295344}
-  startPlatform: {fileID: -6260675347769046542, guid: b68c8836ebd02954db7efd8604ecbb05, type: 3}
-  finishBasePlatform: {fileID: -4878302394533191576, guid: e16737323fd40ac41bab76b283e9940f, type: 3}
+  _startPlatform: {fileID: -6260675347769046542, guid: b68c8836ebd02954db7efd8604ecbb05, type: 3}
+  _finishBasePlatform: {fileID: -4878302394533191576, guid: e16737323fd40ac41bab76b283e9940f, type: 3}
   _middlePlatforms:
   - {fileID: 7290227951596622102, guid: 84bd60c1956de0c4dac3e298f97e3708, type: 3}
   _minRotationY: 0
