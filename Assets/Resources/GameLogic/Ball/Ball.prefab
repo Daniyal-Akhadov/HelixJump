@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 7384812818032785709}
   - component: {fileID: 7384812818032785714}
   - component: {fileID: 2365280339291290760}
+  - component: {fileID: 7686472306417282231}
   - component: {fileID: 7384812818032785715}
   - component: {fileID: 8888426861591854498}
-  - component: {fileID: 7686472306417282231}
+  - component: {fileID: 7494239403029942976}
+  - component: {fileID: 8014197196984005225}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -52,7 +54,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 122
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!135 &2365280339291290760
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -64,8 +66,20 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!75 &7686472306417282231
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384812818032785708}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -9, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &7384812818032785715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0a079f42eea0e46bd84356a106638e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 6
+  _force: 7
   _splash: {fileID: 8587967286004794232, guid: fd53eb77b6e7aa440b59c4aecd61bd7d, type: 3}
 --- !u!114 &8888426861591854498
 MonoBehaviour:
@@ -92,18 +106,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e23070743f64b788f49a6c5d935a442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!75 &7686472306417282231
-ConstantForce:
+--- !u!114 &7494239403029942976
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7384812818032785708}
   m_Enabled: 1
-  m_Force: {x: 0, y: -9, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29204a6025fb40a4b63b34b10930072b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1
+--- !u!114 &8014197196984005225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384812818032785708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310903f550434fe1a336a7c2f707f3c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7384812819378648447
 GameObject:
   m_ObjectHideFlags: 0

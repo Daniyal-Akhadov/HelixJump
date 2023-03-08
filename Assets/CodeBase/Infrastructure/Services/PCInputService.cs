@@ -7,6 +7,6 @@ namespace CodeBase.Infrastructure.Services
         private const string Horizontal = "Horizontal";
 
         public override Vector3 Axis =>
-            Vector3.right * Input.GetAxis(Horizontal);
+            IsBlock == true ? Vector3.zero : Vector3.right * Input.GetAxis(Horizontal);
     }
 }

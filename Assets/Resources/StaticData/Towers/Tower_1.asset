@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelId: 1
   prefab: {fileID: 1410882233334960895, guid: 771048a6e57359d4fbb4d263e71dafec, type: 3}
-  _levelCount: 100
+  _levelCount: 330
   _levelHeight: 1
   _additionalBeamHeight: 1
   _minRotationY: 0

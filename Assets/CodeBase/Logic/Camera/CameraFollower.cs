@@ -26,7 +26,7 @@ namespace CodeBase.Logic.Camera
             }
         }
 
-        public void SetTarget(GameObject ball, Transform beam)
+        public void SetTarget(Transform ball, Transform beam)
         {
             _ball = ball.transform;
             _beam = beam;

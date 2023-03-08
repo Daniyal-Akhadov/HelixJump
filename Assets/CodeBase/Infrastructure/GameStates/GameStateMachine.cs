@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
+using CodeBase.UI.Services.Factory;
 
 namespace CodeBase.Infrastructure.GameStates
 {
-    public class GameStateMachine
+    public class GameStateMachine : IService
     {
         private readonly Dictionary<Type, IExitState> _states;
         private IExitState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, AllServices services)
+        public GameStateMachine(AllServices services, ICoroutineRunner coroutineRunner)
         {
+            SceneLoader sceneLoader = new SceneLoader(coroutineRunner);
+
             _states = new Dictionary<Type, IExitState>()
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
@@ -23,9 +26,11 @@ namespace CodeBase.Infrastructure.GameStates
                 (
                     this,
                     services.Single<IGameFactory>(),
-                    sceneLoader
+                    sceneLoader,
+                    services.Single<IUIFactory>(),
+                    services.Single<IInputService>()
                 ),
-                [typeof(GameLoopState)] = new GameLoopState()
+                [typeof(GameLoopState)] = new GameLoopState(this, services.Single<IInputService>())
             };
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace CodeBase.Logic.Tower
 {
-    public interface IBreakBehaviour
+    public interface ISegmentBehaviour
     {
         public void Execute();
     }

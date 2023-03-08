@@ -9,7 +9,7 @@ namespace CodeBase.Infrastructure
 
         public Game(ICoroutineRunner coroutineRunner)
         {
-            _gameStateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container);
+            _gameStateMachine = new GameStateMachine(AllServices.Container, coroutineRunner);
         }
 
         public void StartGame()

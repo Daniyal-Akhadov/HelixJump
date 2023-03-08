@@ -13,6 +13,9 @@ namespace CodeBase.Logic.Player
         private Rigidbody _rigidbody;
         private MonoPoolService<Splash> _splashPool;
 
+        private static Vector3 AdditiveHeightForSlash =>
+            Vector3.up * 0.06f;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
@@ -23,15 +26,14 @@ namespace CodeBase.Logic.Player
         {
             if (collision.gameObject.TryGetComponent(out PlatformSegment _))
             {
-                Vector3 position = collision.GetContact(0).point + Vector3.up * 0.03f;
-                Splash newSplash = _splashPool.GetFreeElement(position, transform.rotation);
+                ContactPoint contact = collision.GetContact(0);
+                Vector3 position = contact.point + AdditiveHeightForSlash;
+                Quaternion rotation = Quaternion.LookRotation(Vector3.up);
+                Splash newSplash = _splashPool.GetFreeElement(position, rotation);
                 newSplash.transform.SetParent(collision.transform);
                 Jump();
             }
         }
-
-        // public void SetSplash(Splash splash) =>
-        //     _splash = splash;
 
         private void Jump()
         {

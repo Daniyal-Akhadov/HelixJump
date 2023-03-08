@@ -13,7 +13,7 @@ namespace CodeBase.Logic.Platform
         {
             foreach (PlatformSegment segment in Segments)
             {
-                segment.SetBreakBehaviour(new ExplosionBreakBehaviour(segment.gameObject));
+                segment.SetBreakBehaviour(new ExplosionSegmentBehaviour(segment.gameObject));
             }
         }
     }

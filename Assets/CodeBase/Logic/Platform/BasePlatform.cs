@@ -17,7 +17,7 @@ namespace CodeBase.Logic.Platform
         {
             foreach (PlatformSegment segment in Segments)
             {
-                segment.PerformBreak();
+                segment.Perform();
             }
         }
 

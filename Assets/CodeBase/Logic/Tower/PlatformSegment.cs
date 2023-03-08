@@ -5,16 +5,16 @@ namespace CodeBase.Logic.Tower
     [RequireComponent(typeof(Rigidbody))]
     public class PlatformSegment : MonoBehaviour
     {
-        private IBreakBehaviour _breakBehaviour;
+        private ISegmentBehaviour _segmentBehaviour;
 
-        public void SetBreakBehaviour(IBreakBehaviour breakBehaviour)
+        public void SetBreakBehaviour(ISegmentBehaviour segmentBehaviour)
         {
-            _breakBehaviour = breakBehaviour;
+            _segmentBehaviour = segmentBehaviour;
         }
 
-        public void PerformBreak()
+        public void Perform()
         {
-            _breakBehaviour.Execute();
+            _segmentBehaviour.Execute();
         }
     }
 }

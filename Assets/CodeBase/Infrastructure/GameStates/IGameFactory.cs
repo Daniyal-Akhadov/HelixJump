@@ -7,5 +7,6 @@ namespace CodeBase.Infrastructure.GameStates
     {
         GameObject CreateTower();
         GameObject CreateBall(Vector3 initialBallPosition);
+        void CreateHUD();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CodeBase.Logic.Platform
 {
-    public class NoBreakBehaviour : IBreakBehaviour
+    public class NoSegmentBehaviour : ISegmentBehaviour
     {
         public void Execute()
         {

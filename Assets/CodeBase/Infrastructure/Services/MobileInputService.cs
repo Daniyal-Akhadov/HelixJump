@@ -10,7 +10,7 @@ namespace CodeBase.Infrastructure.Services
             {
                 Vector3 result = Vector3.zero;
 
-                if (Input.touchCount > 0)
+                if (IsBlock == false && Input.touchCount > 0)
                 {
                     Touch touch = Input.GetTouch(0);
 

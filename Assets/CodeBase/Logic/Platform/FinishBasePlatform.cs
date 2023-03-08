@@ -8,7 +8,7 @@ namespace CodeBase.Logic.Platform
         {
             foreach (PlatformSegment segment in Segments)
             {
-                segment.SetBreakBehaviour(new NoBreakBehaviour());
+                segment.SetBreakBehaviour(new NoSegmentBehaviour());
             }
         }
     }

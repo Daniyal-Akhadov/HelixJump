@@ -2,18 +2,18 @@
 
 namespace CodeBase.Logic.Tower
 {
-    public class ExplosionBreakBehaviour : IBreakBehaviour
+    public class ExplosionSegmentBehaviour : ISegmentBehaviour
     {
         private readonly Rigidbody _rigidbody;
         private readonly float _force;
         private readonly Vector3 _center;
         private readonly float _radius;
 
-        public ExplosionBreakBehaviour(GameObject gameObject)
+        public ExplosionSegmentBehaviour(GameObject segment)
         {
-            _rigidbody = gameObject.GetComponent<Rigidbody>();
+            _rigidbody = segment.GetComponent<Rigidbody>();
+            _center = segment.transform.position;
             _force = 500f;
-            _center = gameObject.transform.position;
             _radius = 100f;
         }
 
